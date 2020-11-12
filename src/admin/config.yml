@@ -1,0 +1,54 @@
+# Thanks: https://dev.to/andrewmcodes/creating-a-blog-with-bridgetown-and-netlify-cms-1d1a
+
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages: # Optional: configure the commit messages Netlify CMS will use when publishing changes (thanks @andrewmcodes)
+    create: "feat({{collection}}): :sparkles: Create {{slug}}"
+    update: "chore({{collection}}): :recycle: Update {{slug}}"
+    delete: "chore({{collection}}): :recycle: Delete {{slug}}"
+    uploadMedia: "feat(assets): :bento: Upload {{path}}"
+    deleteMedia: "chore(assets): :wastebasket: Delete {{path}}"
+
+local_backend: true # Enable the CMS locally
+
+media_folder: src/images/uploads # location of where we want images uploaded via the CMS update
+
+collections:
+  # Posts - blog posts
+  - name: blog # collection name
+    label: Blog # label in the CMS
+    folder: src/_posts/ # location of the files that make up the collection
+    extension: .md # extension of those files
+    format: frontmatter # format to use
+    create: true # allow creation of new items in this collection
+    slug: '{{year}}-{{month}}-{{day}}-{{title}}' # the slug to use when creating new items
+    editor:
+      preview: false # According to the documentation, this won't work with our setup, but I didn't try
+    fields: # Fields for the collection
+      - { label: Layout, name: layout, widget: hidden, default: post }
+      - { label: Title, name: title, widget: string }
+      - { label: Publish Date, name: date, widget: datetime }
+      - { label: Body, name: body, widget: markdown }
+  # Pages - individual standalone pages (home, about, contact, etc.)
+  - name: pages
+    label: pages
+    editor:
+      preview: false
+    files: # Start listing pages you want to have
+      # Index/Home page
+      - label: Index Page
+        name: index
+        file: src/index.md
+        fields:
+          - { label: Layout, name: title, widget: hidden, default: home }
+          - { label: Body, name: body, widget: markdown }
+      # About page
+      - label: About Page
+        name: about
+        file: src/about.md
+        fields:
+          - { label: Title, name: title, widget: hidden, default: About }
+          - { label: Layout, name: layout, widget: hidden, default: page }
+          - { label: Permalink, name: permalink, widget: string, default: '/about/' }
+          - { label: Body, name: body, widget: markdown }
