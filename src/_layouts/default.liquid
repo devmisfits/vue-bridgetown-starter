@@ -5,6 +5,8 @@
   </head>
   <body class="{{ page.layout }} {{ page.page_class }}">
     {% render "navbar", metadata: site.metadata, page: page %}
+    <div id="hello"></div>
+    <div id="notice"></div>
 
     <main id="swup" class="transition-fade">
       {{ content }}

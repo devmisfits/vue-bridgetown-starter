@@ -38,6 +38,9 @@
   },
   "dependencies": {
     "@tailwindcss/ui": "^0.7.2",
-    "swup": "^2.0.11"
+    "swup": "^2.0.11",
+    "vue": "^2.6.12",
+    "vue-loader": "^15.9.5",
+    "vue-template-compiler": "^2.6.12"
   }
 }

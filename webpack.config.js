@@ -1,6 +1,7 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ManifestPlugin = require("webpack-manifest-plugin");
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
   entry: "./frontend/javascript/index.js",
@@ -18,6 +19,9 @@ module.exports = {
   },
   resolve: {
     extensions: [".js", ".jsx"],
+    alias: {
+      vue: 'vue/dist/vue.js'
+    },
   },
   plugins: [
     new MiniCssExtractPlugin({
@@ -26,6 +30,7 @@ module.exports = {
     new ManifestPlugin({
       fileName: path.resolve(__dirname, ".bridgetown-webpack", "manifest.json"),
     }),
+    new VueLoaderPlugin(),
   ],
   module: {
     rules: [
@@ -49,8 +54,13 @@ module.exports = {
         },
       },
       {
+        test: /\.vue$/,
+        loader: 'vue-loader'
+      },
+      {
         test: /\.(s[ac]|c)ss$/,
         use: [
+          'vue-style-loader',
           MiniCssExtractPlugin.loader,
           "css-loader",
           {
