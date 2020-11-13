@@ -15,7 +15,7 @@
         </button>
       </div>
     </div>
-    <div :class="isOpen ? 'block' : 'hidden'" class="text-gray-200 px-2 py-4
+    <div :class="isOpen ? 'block' : 'hidden'" id="responsive-main-nav" class="text-gray-200 px-2 py-4
       sm:flex">
       <a href="/" class="block p-2 rounded hover:bg-gray-800">Home</a>
       <a href="/about" class="block p-2 rounded hover:bg-gray-800">About</a>

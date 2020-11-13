@@ -11,5 +11,10 @@ new Vue({
   components: { HeaderNav }
 })
 
+document.addEventListener('swup:contentReplaced', (event) => {
+  const nav = document.querySelector("#responsive-main-nav");
+  nav.classList.add("hidden")
+});
+
 console.info("Bridgetown is loaded!")
 
