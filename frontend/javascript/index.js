@@ -6,7 +6,7 @@ import HeaderNav from '../components/HeaderNav.vue'
 const swup = new Swup()
 
 new Vue({
-  el: '#notice',
+  el: '#header-nav',
   template: '<HeaderNav/>',
   components: { HeaderNav }
 })
