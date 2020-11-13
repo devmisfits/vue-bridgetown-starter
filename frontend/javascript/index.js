@@ -12,8 +12,6 @@ new Vue({
 })
 
 document.addEventListener('swup:contentReplaced', (event) => {
-  const nav = document.querySelector("#responsive-main-nav");
-  nav.classList.add("hidden");
   document.getElementById("hamburger-nav-icon").click();
 });
 
