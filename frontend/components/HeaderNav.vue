@@ -6,7 +6,7 @@
                                      alt="logo"/></a>
       </div>
       <div class="sm:hidden">
-        <button @click="isOpen = !isOpen" type="button" class="text-gray-500 hover:text-white
+        <button @click="isOpen = !isOpen" type="button" id="hamburger-nav-icon" class="text-gray-500 hover:text-white
           focus:text-white focus:outline-none">
           <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path v-if="isOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
