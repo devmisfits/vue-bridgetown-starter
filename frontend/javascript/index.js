@@ -12,7 +12,9 @@ new Vue({
 })
 
 document.addEventListener('swup:contentReplaced', (event) => {
-  document.getElementById("hamburger-nav-icon").click();
+  const navList = document.querySelector("#nav-list");
+  navList.classList.add("hidden")
+  document.getElementById("nav-button").click() // to toggle hamburger icon back to x icon
 });
 
 console.info("Bridgetown is loaded!")
