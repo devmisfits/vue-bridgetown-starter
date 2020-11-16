@@ -2,3 +2,11 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+.transition-fade {
+  transition: 0.4s;
+  opacity: 1;
+}
+
+html.is-animating .transition-fade {
+  opacity: 0;
+}
