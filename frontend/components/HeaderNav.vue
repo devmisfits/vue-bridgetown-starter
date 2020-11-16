@@ -30,6 +30,13 @@ module.exports = {
     return {
       isOpen: false,
     }
+  },
+  created: function () {
+    document.addEventListener("swup:contentReplaced", () => {
+      if (this.isOpen) {
+        this.isOpen = false
+      }
+    })
   }
 }
 </script>
