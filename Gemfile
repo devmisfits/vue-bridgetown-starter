@@ -17,3 +17,5 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # Happy Bridgetowning!
 
 gem "bridgetown", "~> 0.17.1"
+
+gem "bridgetown-seo-tag", "~> 3.0", :group => :bridgetown_plugins

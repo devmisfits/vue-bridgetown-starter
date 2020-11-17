@@ -4,6 +4,7 @@
 <title>{% if page_title != "" %}{{ page_title | escape }} | {{ metadata.title | escape }}{% else %}{{ metadata.title | escape }}: {{ metadata.tagline | escape }}{% endif %}</title>
 
 <meta name="description" content="{{ metadata.description }}" />
+{% seo %}
 
 <link rel="stylesheet" href="{% webpack_path css %}" />
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
